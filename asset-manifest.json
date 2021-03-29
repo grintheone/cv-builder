@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/cv-builder/static/css/main.b32fe0ee.chunk.css",
-    "main.js": "/cv-builder/static/js/main.4bcd9f02.chunk.js",
-    "main.js.map": "/cv-builder/static/js/main.4bcd9f02.chunk.js.map",
+    "main.js": "/cv-builder/static/js/main.ba56e5db.chunk.js",
+    "main.js.map": "/cv-builder/static/js/main.ba56e5db.chunk.js.map",
     "runtime-main.js": "/cv-builder/static/js/runtime-main.59b10d84.js",
     "runtime-main.js.map": "/cv-builder/static/js/runtime-main.59b10d84.js.map",
-    "static/js/2.7de50fc4.chunk.js": "/cv-builder/static/js/2.7de50fc4.chunk.js",
-    "static/js/2.7de50fc4.chunk.js.map": "/cv-builder/static/js/2.7de50fc4.chunk.js.map",
+    "static/js/2.342776b0.chunk.js": "/cv-builder/static/js/2.342776b0.chunk.js",
+    "static/js/2.342776b0.chunk.js.map": "/cv-builder/static/js/2.342776b0.chunk.js.map",
     "index.html": "/cv-builder/index.html",
     "static/css/main.b32fe0ee.chunk.css.map": "/cv-builder/static/css/main.b32fe0ee.chunk.css.map",
-    "static/js/2.7de50fc4.chunk.js.LICENSE.txt": "/cv-builder/static/js/2.7de50fc4.chunk.js.LICENSE.txt",
+    "static/js/2.342776b0.chunk.js.LICENSE.txt": "/cv-builder/static/js/2.342776b0.chunk.js.LICENSE.txt",
     "static/media/header.fe324fae.svg": "/cv-builder/static/media/header.fe324fae.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.59b10d84.js",
-    "static/js/2.7de50fc4.chunk.js",
+    "static/js/2.342776b0.chunk.js",
     "static/css/main.b32fe0ee.chunk.css",
-    "static/js/main.4bcd9f02.chunk.js"
+    "static/js/main.ba56e5db.chunk.js"
   ]
 }
