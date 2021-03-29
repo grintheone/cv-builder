@@ -1,77 +1,162 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-class Education extends React.Component {
-    constructor() {
-        super()
-        this.state = {
-            university: "",
-            title: "",
-            qualification: "",
-            from: "",
-            to: ""
-        }
-    }
+// class Education extends React.Component {
+//     constructor() {
+//         super()
+//         this.state = {
+//             university: "",
+//             title: "",
+//             qualification: "",
+//             from: "",
+//             to: ""
+//         }
+//     }
 
-    handleChange = (event) => {
+//     handleChange = (event) => {
+//         const {name, value} = event.target
+//         this.setState({[name]: value})
+//     }
+
+//     render() {
+//         const university = props.editable ?
+//         <input 
+//         type="text"
+//         name="university"
+//         value={university}
+//         onChange={handleChange}
+//         style={{width: "80%"}}
+//         placeholder="Enter here"
+//         required
+//         /> :
+//         <span>{university}</span> 
+
+//         const title = props.editable ?
+//         <input 
+//         type="text"
+//         name="title"
+//         value={title}
+//         onChange={handleChange}
+//         placeholder="Enter here"
+//         required
+//         /> :
+//         <span>{title}</span> 
+
+//         const qualification = props.editable ?
+//         <input 
+//         type="text"
+//         name="qualification"
+//         value={qualification}
+//         onChange={handleChange}
+//         placeholder="Enter here"
+//         required
+//         /> :
+//         <span>{qualification}</span> 
+        
+//         const from = props.editable ?
+//         <input 
+//         type="date"
+//         name="from"
+//         value={from}
+//         onChange={handleChange}
+//         required
+//         /> :
+//         <span>{from}</span> 
+        
+//         const to = props.editable ?
+//         <input 
+//         type="date"
+//         name="to"
+//         value={to}
+//         onChange={handleChange}
+//         required
+//         /> :
+//         <span>{to}</span> 
+        
+//         return (
+//             <section className="education">
+//                 <b>Name of University or School: </b>
+//                 {university}
+//                 <div className="title-qualification">
+//                     <b>Title of study: <p style={{fontWeight: "normal"}}>{title}</p></b>
+//                     <b>Qualification: <p style={{fontWeight: "normal"}}>{qualification}</p></b>
+//                 </div>
+//                 <div className="from-to">
+//                     <b>From: <p style={{fontWeight: "normal"}}>{from}</p></b>
+//                     <b>To: <p style={{fontWeight: "normal"}}>{to}</p></b>
+//                 </div>
+//             </section>
+//         )
+//     }
+// }
+
+function Education(props) {
+    const [inputValues, setInputValues] = useState({
+        university: "",
+        title: "",
+        qualification: "",
+        from: "",
+        to: ""
+    })
+
+    const handleChange = event => {
         const {name, value} = event.target
-        this.setState({[name]: value})
+        setInputValues({...inputValues, [name]: value})
     }
 
-    render() {
-        const university = this.props.editable ?
+    const university = props.editable ?
         <input 
         type="text"
         name="university"
-        value={this.state.university}
-        onChange={this.handleChange}
+        value={inputValues.university}
+        onChange={handleChange}
         style={{width: "80%"}}
         placeholder="Enter here"
         required
         /> :
-        <span>{this.state.university}</span> 
+        <span>{inputValues.university}</span> 
 
-        const title = this.props.editable ?
+    const title = props.editable ?
         <input 
         type="text"
         name="title"
-        value={this.state.title}
-        onChange={this.handleChange}
+        value={inputValues.title}
+        onChange={handleChange}
         placeholder="Enter here"
         required
         /> :
-        <span>{this.state.title}</span> 
+        <span>{inputValues.title}</span> 
 
-        const qualification = this.props.editable ?
+    const qualification = props.editable ?
         <input 
         type="text"
         name="qualification"
-        value={this.state.qualification}
-        onChange={this.handleChange}
+        value={inputValues.qualification}
+        onChange={handleChange}
         placeholder="Enter here"
         required
         /> :
-        <span>{this.state.qualification}</span> 
+        <span>{inputValues.qualification}</span> 
         
-        const from = this.props.editable ?
+    const from = props.editable ?
         <input 
         type="date"
         name="from"
-        value={this.state.from}
-        onChange={this.handleChange}
+        value={inputValues.from}
+        onChange={handleChange}
         required
         /> :
-        <span>{this.state.from}</span> 
+        <span>{inputValues.from}</span> 
         
-        const to = this.props.editable ?
+    const to = props.editable ?
         <input 
         type="date"
         name="to"
-        value={this.state.to}
-        onChange={this.handleChange}
+        value={inputValues.to}
+        onChange={handleChange}
         required
         /> :
-        <span>{this.state.to}</span> 
-        
+        <span>{inputValues.to}</span>
+
         return (
             <section className="education">
                 <b>Name of University or School: </b>
@@ -86,7 +171,7 @@ class Education extends React.Component {
                 </div>
             </section>
         )
-    }
+
 }
 
 export default Education

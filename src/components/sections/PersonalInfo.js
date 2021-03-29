@@ -1,66 +1,140 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Photo from './Photo'
 
-class PersonalInfo extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            firstName: "",
-            lastName: "",
-            phone: "",
-            email: "",
-        }
-    }
+// class PersonalInfo extends React.Component {
+//     constructor(props) {
+//         super(props)
+//         state = {
+//             firstName: "",
+//             lastName: "",
+//             phone: "",
+//             email: "",
+//         }
+//     }
 
-    handleChange = (event) => {
+//     handleChange = (event) => {
+//         const {name, value} = event.target
+//         setState({[name]: value})
+//     }
+
+//     render() {
+//         const firstName = props.editable ? 
+//         <input 
+//         type="text"
+//         name="firstName"
+//         value={firstName}
+//         onChange={handleChange}
+//         placeholder="Your first name"
+//         required
+//         /> :
+//         <span>{firstName}</span> 
+        
+//         const lastName = props.editable ? 
+//         <input 
+//         type="text"
+//         name="lastName"
+//         value={lastName}
+//         onChange={handleChange}
+//         placeholder="Your last name"
+//         required
+//         /> : 
+//         <span>{lastName}</span> 
+
+//         const phone = props.editable ? 
+//         <input 
+//         type="text"
+//         name="phone"
+//         value={phone}
+//         onChange={handleChange}
+//         placeholder="Your number"
+//         required
+//         /> : 
+//         <span>{phone}</span> 
+
+//         const email = props.editable ? 
+//         <input 
+//         type="text"
+//         name="email"
+//         value={email}
+//         onChange={handleChange}
+//         placeholder="Your email address"
+//         required
+//         /> : 
+//         <span>{email}</span> 
+
+//         return (
+//             <section className="personal-info">
+//                 <div>
+//                     <p className="personal"><b>First name: </b>{firstName}</p>
+//                     <p className="personal"><b>Last name: </b>{lastName}</p>
+//                     <p className="personal"><b>Phone number: </b>{phone}</p>
+//                     <p className="personal"><b>Email address: </b>{email}</p>
+//                 </div>
+//                 <div>
+//                     <Photo />
+//                 </div>
+//             </section>
+//         )
+//     }
+// }
+
+function PersonalInfo(props) {
+    const [inputValues, setInputValues] = useState({
+        firstName: "",
+        lastName: "",
+        phone: "",
+        email: "",
+    })
+    
+
+    const handleChange = event => {
         const {name, value} = event.target
-        this.setState({[name]: value})
+        setInputValues({...inputValues, [name]: value})
     }
 
-    render() {
-        const firstName = this.props.editable ? 
+    const firstName = props.editable ? 
         <input 
         type="text"
         name="firstName"
-        value={this.state.firstName}
-        onChange={this.handleChange}
+        value={inputValues.firstName}
+        onChange={handleChange}
         placeholder="Your first name"
         required
         /> :
-        <span>{this.state.firstName}</span> 
+        <span>{inputValues.firstName}</span> 
         
-        const lastName = this.props.editable ? 
+    const lastName = props.editable ? 
         <input 
         type="text"
         name="lastName"
-        value={this.state.lastName}
-        onChange={this.handleChange}
+        value={inputValues.lastName}
+        onChange={handleChange}
         placeholder="Your last name"
         required
         /> : 
-        <span>{this.state.lastName}</span> 
+        <span>{inputValues.lastName}</span> 
 
-        const phone = this.props.editable ? 
+    const phone = props.editable ? 
         <input 
         type="text"
         name="phone"
-        value={this.state.phone}
-        onChange={this.handleChange}
+        value={inputValues.phone}
+        onChange={handleChange}
         placeholder="Your number"
         required
         /> : 
-        <span>{this.state.phone}</span> 
+        <span>{inputValues.phone}</span> 
 
-        const email = this.props.editable ? 
+    const email = props.editable ? 
         <input 
         type="text"
         name="email"
-        value={this.state.email}
-        onChange={this.handleChange}
+        value={inputValues.email}
+        onChange={handleChange}
         placeholder="Your email address"
         required
         /> : 
-        <span>{this.state.email}</span> 
+        <span>{inputValues.email}</span> 
 
         return (
             <section className="personal-info">
@@ -75,7 +149,6 @@ class PersonalInfo extends React.Component {
                 </div>
             </section>
         )
-    }
 }
 
 export default PersonalInfo
